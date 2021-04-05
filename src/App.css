@@ -1,5 +1,182 @@
-.box {
-  padding: 5px 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  padding: 16px;
+}
+
+form {
+  width: 520px;
+  padding: 16px;
+  margin: auto;
+}
+
+form h4 {
+  margin: 16px 0;
+  padding-bottom: 10px;
   border-bottom: groove;
 }
 
+form .radio_butts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+form .radio_butts .butt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 8px;
+  width: 45%;
+  cursor: pointer;
+}
+
+form .radio_butts .butt .in,
+form .radio_butts .butt .out {
+  display: block;
+  border-radius: 50%;
+}
+
+form .radio_butts .butt .out {
+  width: 15px;
+  height: 15px;
+  border: 2px solid lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .radio_butts .butt .out .in {
+  width: 8px;
+  height: 8px;
+  background: lightgray;
+}
+
+form .radio_butts .butt p {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+form .radio_butts .butt.active {
+  border: 2px solid #3e94f5;
+  background: rgba(62, 148, 245, 0.2);
+}
+
+form .radio_butts .butt.active .out {
+  border: 2px solid #3e94f5;
+}
+
+form .radio_butts .butt.active .out .in {
+  background: #3e94f5;
+}
+
+form .radio_butts .butt.active p {
+  color: #3e94f5;
+}
+
+form .input_field {
+  margin: 16px 0;
+}
+
+form .input_field p {
+  margin: 8px 0;
+}
+
+form .input_field input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+
+form .discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form .discount div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 50%;
+}
+
+form .discount div input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+form .discount div p {
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+form .discount input {
+  padding: 8px;
+  border-radius: 5px;
+  width: 50%;
+  border: 2px solid lightgray;
+}
+
+form .checks .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 8px 0;
+}
+
+form .checks .check div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .checks .check div p {
+  margin-left: 8px;
+}
+
+form .checks .check input {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid lightgray;
+}
+
+@media screen and (max-width: 520px) {
+  form {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,77 +1,135 @@
-import React from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup  from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Checkbox from '@material-ui/core/Checkbox';
-import "../src/task.css";
-import FormGroup from '@material-ui/core/FormGroup';
+import React from "react";
+import Button from 'react-bootstrap/Button'
 
 export default function RadioButtonsGroup() {
-  const [value, setValue] = React.useState('BCC');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  return (
-       <form >
-         <div class="box">
-         <h2>Add Coupon Code</h2>
-         </div>
-         <FormControl component="fieldset">
-      <RadioGroup row aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-        <FormControlLabel value="SCC" class="box1" control={<Radio />} label="Single Coupon Code" />
-        <FormControlLabel value="BCC" class="box1" control={<Radio />} label="Bulk Coupon Code" />
-      </RadioGroup >
-    </FormControl>
-         <p>Enter Name</p>
-         <input type="text" placeholder="Input text" />
-         <p>Enter Coupon Code</p>
-         <input type="text" placeholder="Input text" />
-         <p>Type of Discount</p>
-         <label>
-           <input type="radio"/>Percentage discount
-         </label>
-         <input type="text" placeholder="Enter Discount"/>
-         <br/><br/>
-         <label>
-           <input type="radio"/>Fixed amount Discount
-         </label><br/><br/>
-         <FormGroup >
-         <FormControlLabel
-        control={
-          <Checkbox
-            name="1"
-            color="primary"
-          />
+    const handleClick = () => {
+        const butts = document.getElementsByClassName("butt");
+        for (let i = 0; i < butts.length; i++) {
+            butts[i].classList.toggle("active");
         }
-        label="Limit the number of times the code can be redeemed"
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            name="2"
-            color="primary"
-          />
-        }
-        label="Add any expiry date"
-      />
-        <FormControlLabel
-        control={
-          <Checkbox
-            
-            name="3"
-            color="primary"
-          />
-        }
-        label="Limit to specific courses"
-      />
+    };
+    return (
+        <form>
+            <h4>Add Coupon Code</h4>
+            <div className='radio_butts'>
+                <div className='butt active' onClick={handleClick}>
+                    <span className='out'>
+                        <span className='in'></span>
+                    </span>
+                    <p>Single Coupon Code</p>
+                </div>
+                <div className='butt' onClick={handleClick}>
+                    <span className='out'>
+                        <span className='in'></span>
+                    </span>
+                    <p>Bulk Coupon Code</p>
+                </div>
+            </div>
+            <div className='input_field'>
+                <p>Enter Name</p>
+                <input type='text' placeholder='Input text' />
+            </div>
+            <div className='input_field'>
+                <p>Enter Coupon Code</p>
+                <input type='text' placeholder='Input text' />
+            </div>
+            <p>Type of Discount</p>
+            <div className='discount'>
+                <div>
+                    <input type='radio' name='discount' />
+                    <p>Percentage discount</p>
+                </div>
+                <input type='text' placeholder='Enter Discount' />
+            </div>
 
-         </FormGroup>
-      </form>
-  );
+            <div className='discount'>
+                <div>
+                    <input type='radio' name='discount' />
+                    <p>Fixed Amount discount</p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div className='checks'>
+                <div className='check'>
+                    <div>
+                        <input
+                            type='checkbox'
+                            onChange={(e) => {
+                                let ele = document.getElementById("inp-1");
+                                if (e.target.checked) {
+                                    ele.style.display = "block";
+                                } else ele.style.display = "none";
+                            }}
+                        />
+                        <p>
+                            Limit the number of times the code can be redeemed
+                        </p>
+                    </div>
+                    <input
+                        type='text'
+                        id='inp-1'
+                        placeholder='Enter Number'
+                        style={{
+                            display: "none",
+                        }}
+                    />
+                </div>
+                <div className='check'>
+                    <div>
+                        <input
+                            type='checkbox'
+                            onChange={(e) => {
+                                let ele = document.getElementById("inp-2");
+                                if (e.target.checked) {
+                                    ele.style.display = "block";
+                                } else ele.style.display = "none";
+                            }}
+                        />
+                        <p>Add an expiry date</p>
+                    </div>
+                    <input
+                        type='date'
+                        id='inp-2'
+                        placeholder='Selected Date'
+                        style={{
+                            display: "none",
+                        }}
+                    />
+                </div>
+                <div className='check'>
+                    <div>
+                        <input
+                            type='checkbox'
+                            onChange={(e) => {
+                                let ele = document.getElementById("inp-3");
+                                if (e.target.checked) {
+                                    ele.style.display = "block";
+                                } else ele.style.display = "none";
+                            }}
+                        />
+                        <p>Limit to specific courses</p>
+                    </div>
+                    <input
+                        type='text'
+                        id='inp-3'
+                        placeholder='Input Text'
+                        style={{
+                            display: "none",
+                        }}
+                    />
+                </div>
+            </div>
+            <>
+            <div className="mb-2" >
+                <Button variant="primary" size="lg">
+                 Cancel
+                </Button>{' '}
+                <Button variant="secondary" size="lg">
+                Save
+                </Button>
+            </div>
+            </>
+        </form>
+    );
 }
-
-
-
